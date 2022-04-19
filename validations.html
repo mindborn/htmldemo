@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        function validateName()
+        {
+            let e_message_name = document.getElementById("message_name");
+            e_message_name.innerHTML = '';
+            let e_name = document.querySelector("#name");
+            let name = e_name.value.trim();
+            if (name.length === 0)
+            {
+                e_message_name.innerHTML = 'Empty name';
+            }
+            else if (name.length < 2)
+            {
+                e_message_name.innerHTML = 'Name too short';
+            }
+        }
+
+        function validatePhone()
+        {
+            let e_message_phone = document.getElementById("message_phone");
+            e_message_phone.innerHTML = '';
+            let e_phone = document.querySelector("#phone");
+            let phone = e_phone.value.trim();
+            if (phone.length === 0)
+            {
+                e_message_phone.innerHTML = 'Required';
+            }
+            else
+            {
+                var IndNum = /^[0]?[789]\d{9}$/;
+                //var IndNum = /^\d{10}$/;
+
+                if (IndNum.test(phone))
+                {
+                    return;
+                }
+                e_message_phone.innerHTML = 'Incorrect phone number';
+            }
+        }
+
+        function validateForm()
+        {
+            validateName();
+            validatePhone();
+        }
+    </script>
+
+</head>
+
+<body>
+
+    Name <input id="name" type="text"><span id="message_name"></span>
+    <br /><br />
+    Phone <input id="phone" /><span id="message_phone"></span>
+    <br /><br />
+    <button onclick="validateForm()">Submit</button>
+    <br /><br/>
+    Gender <select>
+        <option>Choose</option>
+        <option>Male</option>
+        <option>Female</option>
+    </select>
+    <br /><br/>
+
+</body>
+
+</html>
