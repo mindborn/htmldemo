@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function onAdd()
+        {
+            let e_div_list=document.getElementById("div_list");
+
+            let e_txt_name=document.getElementById("txt_name");
+            let name=e_txt_name.value;
+            e_txt_name.value='';
+
+            let s=document.createElement("div");
+            s.innerHTML=name;
+            e_div_list.appendChild(s);
+        }
+
+        function onRemoveFirst()
+        {
+            let e_div_list=document.getElementById("div_list");
+
+            let children= e_div_list.childNodes;
+            console.log(children);
+
+            if(children.length<4)
+            {
+                alert("No items to remove");
+                return;
+            }
+            let c=children[3];
+            e_div_list.removeChild(c);
+        }
+
+        function onRemove()
+        {
+            let e_div_list=document.getElementById("div_list");
+
+            let children= e_div_list.childNodes;
+            console.log(children);
+
+            if(children.length<4)
+            {
+                alert("No items to remove");
+                return;
+            }
+            let deleted=false;
+            let e_txt_name=document.getElementById("txt_name");
+            let name=e_txt_name.value;
+            for(let i=3;i<children.length;i++)
+            {
+                let d=children[i];
+                let t=d.innerHTML;
+                if(t===name)
+                {
+                    deleted=true;
+                    e_div_list.removeChild(d);
+                    break;
+                }
+            }
+            if(!deleted)
+            {
+                alert("Item not found");
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <div id="div_list">
+        List of items<br/>
+    </div>
+
+    <h2>Add New Item</h2>
+    <input id="txt_name" /><br/>
+    <button onclick="onAdd()">Add</button>
+    <button onclick="onRemove()">Remove</button>
+    <button onclick="onRemoveFirst()">Remove First</button>
+</body>
+</html>
