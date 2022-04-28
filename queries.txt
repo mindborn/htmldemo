@@ -1,0 +1,66 @@
+CREATE TABLE class
+(
+	classid int,
+	classname varchar(200),
+	coordinator varchar(200)
+);
+
+create table student
+(
+	studentid int,
+	name varchar(200),
+	address varchar(4000),
+	classid int
+);
+
+ALTER TABLE student add column pin int;
+
+ALTER TABLE student drop column pin;
+
+
+
+
+INSERT INTO student VALUES (1,'Paresh','Solapur',413001);
+
+insert into student(studentid,name) values (2,'Shilpa');
+insert into student(name,studentid) values ('Shilpa',2);
+
+
+SELECT * FROM student;
+SELECT studentid,name from student;
+
+create table employee
+(
+	empid int auto_increment primary key,
+	name varchar(200),
+	salary int
+);
+
+insert into employee values (0,'E1',10000),(0,'E2',11000),(10,'E3',12000),(0,'E4',13000);
+
+
+select * from employee;
+
+select name from employee;    --projection
+
+select * from employee where salary>12000;  --selection
+
+select * from employee order by salary;     --ordering
+
+
+
+update employee set salary=salary+1000;
+
+delete from employee where empid=10;
+
+create user 'user1'@'%' identified by 'user1';
+
+grant all on college.* to 'user1'@'%';
+
+revoke all on college.* from 'user1'@'%';
+
+select count(*) from item;
+
+select distinct itemtype from item;
+
+select itemtype,sum(orderqty) from item group by itemtype;
