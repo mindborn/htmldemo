@@ -1,0 +1,47 @@
+Angular framework
+	-component based framework
+
+Angular Application
+
+	Modules
+	
+		Components
+			HTML	Template
+			CSS		Style
+			TS		Logic
+
+		Service
+			background tasks
+
+		Pipe
+
+		Directive
+
+
+======================
+install angular CLI (Command Line Interface)
+
+npm install --global @angular/cli
+npm i -g @angular/cli
+
+=================
+
+
+Create Angular Project
+
+ng new
+
+
+===================
+
+Run development server
+
+ng serve --open
+ng s -o
+
+==================
+
+Create Component
+
+ng generate component
+ng g c 
