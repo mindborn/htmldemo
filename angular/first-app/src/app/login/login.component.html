@@ -1,11 +1,19 @@
+{{message}}<br/>
+{{message.toLowerCase()}}<br/>
+{{10*20}}
+
 <table>
   <tr>
     <td>Username</td>
-    <td><input type="text"></td>
+    <td>
+      <input type="text" [(ngModel)]="username"/>
+      <input type="text" [value]="username"/>
+      {{username}}
+    </td>
   </tr>
   <tr>
     <td>Password</td>
-    <td><input type="password" name="" id=""></td>
+    <td><input type="password" [(ngModel)]="password" name="" id=""/>{{password}}</td>
   </tr>
   <tr>
     <td><button>Login</button></td>

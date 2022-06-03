@@ -1,0 +1,11 @@
+<input type="number" [(ngModel)]="n">
+
+<div *ngIf="n%2===0" style="color: red">Number is even</div>
+<div *ngIf="n%2!==0" style="color: blue">Number is odd</div>
+
+List:
+<div *ngFor="let e of list">{{e}}</div>
+
+Add to List:
+<input [(ngModel)]="name" />
+<button (click)="onAddElement()">Add</button>

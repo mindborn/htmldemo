@@ -1,0 +1,11 @@
+<input type="number" [(ngModel)]="n1">
+<input type="number" [(ngModel)]="n2">
+
+<button (click)="onAdd()">Add</button>
+<button (click)="onSub()">Sub</button>
+<br/>
+Result = {{result}}
+<br/>
+{{n1+n2}}<br/>
+{{add(n1,n2)}}<br/>
+{{sub(n1,n2)}}
