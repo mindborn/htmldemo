@@ -1,3 +1,4 @@
+import { UserinfoService } from './../userinfo.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -12,7 +13,7 @@ export class CalcComponent implements OnInit {
 
   result:number=0;
 
-  constructor() { }
+  constructor(public userinfo: UserinfoService) { }
 
   ngOnInit(): void {
   }

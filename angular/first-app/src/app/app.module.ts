@@ -1,3 +1,4 @@
+import { UserinfoService } from './userinfo.service';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -20,7 +21,7 @@ import { EvenOddComponent } from './even-odd/even-odd.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [UserinfoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
