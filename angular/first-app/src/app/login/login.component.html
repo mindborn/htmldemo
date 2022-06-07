@@ -3,7 +3,6 @@
     <td>Username</td>
     <td>
       <input type="text" [(ngModel)]="username"/>
-      {{username}}
     </td>
   </tr>
   <tr>
@@ -11,7 +10,11 @@
     <td><input type="password" [(ngModel)]="password" name="" id=""/></td>
   </tr>
   <tr>
-    <td><button>Login</button></td>
+    <td (click)="onLogin()"><button>Login</button></td>
     <td></td>
   </tr>
 </table>
+{{message}}
+
+<!-- <a routerLink="/calculator">Open Calculator</a>
+<button (click)="onCalc()">Go to calculator</button> -->

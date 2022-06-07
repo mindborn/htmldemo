@@ -1,0 +1,16 @@
+<h1>User List</h1>
+
+<table border="1" style="border-collapse:collapse">
+  <tr>
+    <td>ID</td>
+    <td>Username</td>
+    <td>Password</td>
+  </tr>
+  <tr *ngFor="let user of users">
+    <td>{{user.userid}}</td>
+    <td>{{user.username}}</td>
+    <td>{{user.password}}</td>
+  </tr>
+</table>
+
+<a routerLink="/adduser">Add New User</a>

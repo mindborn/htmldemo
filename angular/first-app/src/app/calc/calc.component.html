@@ -1,3 +1,5 @@
+Welcome, {{userinfo.username}}<br/>
+
 <input type="number" [(ngModel)]="n1">
 <input type="number" [(ngModel)]="n2">
 
@@ -9,3 +11,5 @@ Result = {{result}}
 {{n1+n2}}<br/>
 {{add(n1,n2)}}<br/>
 {{sub(n1,n2)}}
+
+<a routerLink="/login">Go to Login Page</a>

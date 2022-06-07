@@ -1,0 +1,26 @@
+<table>
+  <tr>
+    <td>Username</td>
+    <td>
+      <input type="text" [(ngModel)]="user.username" />
+    </td>
+  </tr>
+  <tr>
+    <td>Password</td>
+    <td>
+      <input type="password" [(ngModel)]="user.password" />
+    </td>
+  </tr>
+  <tr>
+    <td>Confirm Password</td>
+    <td>
+      <input type="password" [(ngModel)]="cpassword" />
+      <span style="color:red" *ngIf="user.password!==cpassword">Passwords mismatch</span>
+    </td>
+  </tr>
+  <tr>
+    <td><button [disabled]="user.password!==cpassword" (click)="onAddUser()">Add User</button></td>
+    <td></td>
+  </tr>
+</table>
+{{message}}
